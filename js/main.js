@@ -320,37 +320,39 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document
-  .getElementById("contactForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Empêcher l'envoi classique
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+  event.preventDefault(); // Empêche l'envoi classique
 
-    let form = this;
-    let formData = new FormData(form);
-    let formMessage = document.getElementById("formMessage");
+  let form = this;
+  let formData = new FormData(form);
+  let formMessage = document.getElementById("formMessage");
 
-    fetch(form.action, {
-      method: form.method,
-      body: formData,
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          formMessage.className = "alert alert-success";
-          formMessage.textContent = "Votre message a été envoyé avec succès !";
-          form.reset(); // Réinitialisation du formulaire
-        } else {
-          throw new Error("Erreur lors de l'envoi du message.");
-        }
-      })
-      .catch((error) => {
-        // Message d'erreur
-        formMessage.className = "alert alert-danger";
-        formMessage.textContent =
-          "Une erreur s'est produite. Veuillez réessayer plus tard.";
-      })
+  fetch(form.action, {
+    method: form.method,
+    body: formData,
+    headers: {
+      Accept: "application/json"
+    }
+  })
+  .then((response) => {
+    if (response.ok) {
+      formMessage.className = "alert alert-success";
+      formMessage.textContent = "Votre message a bien été envoyé !";
+      formMessage.classList.remove("d-none");
+      form.reset();
+    } else {
+      return response.json().then(data => {
+        throw new Error(data.error || "Erreur lors de l'envoi.");
+      });
+    }
+  })
+  .catch((error) => {
+    formMessage.className = "alert alert-danger";
+    formMessage.textContent = "Une erreur est survenue. Veuillez réessayer plus tard.";
+    formMessage.classList.remove("d-none");
+  });
+});
+
       .finally(() => {
         formMessage.classList.remove("d-none");
       });
