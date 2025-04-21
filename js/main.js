@@ -92,6 +92,13 @@ const projects = [
     link: "https://xn--thpays-cva.com/",
     category: "Développer"
   },
+  {
+    title: "Projet 15: Vidéo type Day in my life à l’ASFO",
+    description: "Type : Vidéo storytelling Outils utilisés : Smartphone, montage vidéo (optionnel à préciser si tu as utilisé un logiciel) Objectif : Mettre en scène une journée type de formation à l’ASFO à travers une narration immersive et rythmée Dans le cadre de ma formation, j’ai réalisé une vidéo de type “Day in my life” visant à illustrer, de manière authentique et dynamique, une journée typique passée à l’ASFO. Ce projet avait pour but de combiner narration personnelle, prise de vue, montage et storytelling, tout en adoptant un ton à la fois informatif et engageant. La vidéo suit le déroulé complet de ma journée, depuis mon réveil jusqu’au retour à la maison, en passant par le trajet en bus, les cours (dont un exposé sur le Green IT), la pause déjeuner dans un restaurant local, et un atelier de création graphique. Le récit est ponctué de touches d’humour, de réflexions personnelles et de commentaires en voix off pour renforcer l'immersion. Ce projet m’a permis de travailler l’écriture de script, la gestion du rythme en montage, la voix off ainsi que la mise en scène du quotidien dans une logique de contenu engageant, proche des codes utilisés sur les réseaux sociaux.",
+    image: "images/Day in my Life by EC.png",
+     link: "https://www.canva.com/design/DAGVYG3a2Bo/mzSUH_haA0OEdbBK1RmuBQ/watch?utm_content=DAGVYG3a2Bo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h489805ea3b",
+    category: "Entreprendre"
+  },
 ];
 let currentFilteredProjects = []; // <-- Tableau des projets affichés
 
