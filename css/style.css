@@ -1,0 +1,553 @@
+/* Réinitialisation des marges, des paddings et du modèle de boîte pour tous les éléments */
+* {
+  margin: 0; /* Supprime les marges par défaut */
+  padding: 0; /* Supprime les paddings par défaut */
+  box-sizing: border-box; /* Assure que la largeur et la hauteur incluent le padding et la bordure */
+}
+
+/* Styles globaux pour le corps de la page */
+body {
+  font-family: "Arial", sans-serif; /* Définit la police principale */
+  background-color: #f4f4f9; /* Définit la couleur de fond */
+}
+
+/* Barre de navigation */
+.navbar {
+  display: flex; /* Active le mode flexbox pour aligner les éléments en ligne */
+  justify-content: space-between; /* Espacement maximal entre les éléments */
+  align-items: center; /* Centre verticalement les éléments */
+  padding: 15px 30px; /* Ajoute un espacement intérieur pour l'esthétique */
+  background-color: #2c3e50; /* Définit la couleur de fond */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère pour un effet en relief */
+}
+
+/* Style du logo dans la navbar */
+.navbar .logo {
+  font-size: 1.5rem; /* Définit la taille de la police */
+  font-weight: bold; /* Rend le texte en gras */
+  color: #ecf0f1; /* Définit la couleur du texte */
+  text-transform: uppercase; /* Transforme le texte en majuscules */
+}
+
+/* Liste des liens de navigation */
+.navbar ul {
+  list-style: none; /* Supprime les puces de la liste */
+  display: flex; /* Affiche les éléments en ligne avec flexbox */
+}
+
+/* Style des éléments de la liste */
+.navbar ul li {
+  margin: 0 15px; /* Ajoute un espacement horizontal entre les éléments */
+}
+
+/* Style des liens de navigation */
+.navbar ul li a {
+  text-decoration: none; /* Supprime le soulignement des liens */
+  color: #ecf0f1; /* Définit la couleur du texte */
+  font-size: 1rem; /* Définit la taille de la police */
+  transition: color 0.3s ease; /* Ajoute une transition fluide pour les changements de couleur */
+}
+
+/* Effet au survol des liens de navigation */
+.navbar ul li a:hover {
+  color: #3498db; /* Change la couleur du texte en bleu clair au survol */
+}
+
+.contact-button {
+  font-family: "Poppins", sans-serif; /* Police moderne */
+  font-size: 16px; /* Taille adaptée pour une bonne lisibilité */
+  font-weight: 600; /* Texte légèrement en gras */
+  letter-spacing: 0.5px; /* Espacement entre les lettres */
+  padding: 12px 24px; /* Ajout d'espacement autour du texte */
+  border-radius: 150px; /* Coins arrondis pour un design moderne */
+  background-color: #4290e3; /* Couleur du fond (bleu) */
+  color: #fff; /* Couleur du texte */
+  border: none; /* Pas de bordure */
+  cursor: pointer; /* Curseur pointer au survol */
+  transition: all 0.3s ease; /* Animation fluide pour les interactions */
+  margin-right: 10px; /* Ajoute de l'espace autour du bouton */
+  display: block; /* Centre le bouton si dans un conteneur */
+  max-width: fit-content; /* Évite qu'il prenne toute la largeur */
+}
+
+.contact-button:hover {
+  background-color: #0056b3; /* Couleur plus foncée au survol */
+  transform: scale(1.05); /* Légère mise en avant au survol */
+}
+
+/* --- MEDIA QUERY POUR LES ÉCRANS DE MOINS DE 768px --- */
+@media (max-width: 768px) {
+  /* Modification du menu de navigation pour les petits écrans */
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    background-color: #34495e;
+    padding: 20px;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Affiche la liste quand une classe spécifique est ajoutée via JavaScript */
+  .navbar ul.show {
+    display: flex;
+  }
+
+  /* Icône de menu (hamburger) visible sur mobile */
+  .navbar .menu-toggle {
+    display: block;
+    font-size: 1.5rem;
+    color: #ecf0f1;
+    cursor: pointer;
+  }
+}
+/* --- STYLE GÉNÉRAL DU BODY --- */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- SECTION PROJETS --- */
+.projects-section {
+  padding: 50px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/* Style du titre de la section projets */
+.projects-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* Conteneur des cartes de projets */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Carte individuelle d'un projet */
+.project-card {
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  text-align: left;
+}
+
+/* Images des projets */
+.project-image {
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+}
+
+/* Variante d'image avec une hauteur différente */
+.project-image2 {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+/* Conteneur des informations du projet */
+.project-info {
+  padding: 15px;
+}
+
+/* Titre du projet */
+.project-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+/* Description du projet */
+.project-info p {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+/* --- ADAPTATION POUR LES ÉCRANS INFÉRIEURS À 768px --- */
+@media (max-width: 768px) {
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.filter-btn.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+/* --- STYLE DU FOOTER --- */
+footer ul li a:hover {
+  color: #3498db;
+  text-decoration: underline;
+}
+
+/* --- SECTION HERO --- */
+.hero {
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Style du titre dans la section hero */
+.hero h1 {
+  color: #2c3e50;
+}
+
+/* Style des images dans la section hero */
+.hero img {
+  max-width: 100%;
+  height: auto;
+  border: 5px solid #2c3e50;
+}
+
+/* --- FORMULAIRE DE CONTACT --- */
+#contact h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Labels des champs du formulaire */
+#contact .form-label {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Champs de saisie */
+#contact .form-control {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Effet au focus sur les champs */
+#contact .form-control:focus {
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-color: #007bff;
+}
+
+/* Bouton d'envoi */
+#contact button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+/* Effet au survol du bouton */
+#contact button:hover {
+  background-color: #0056b3;
+}
+
+/* --- SECTION "CE QUE JE FAIS" --- */
+#Ce\ que\ je\ fais h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Cartes de services */
+#Ce\ que\ je\ fais .card {
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol des cartes */
+#Ce\ que\ je\ fais .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Icônes des cartes */
+#Ce\ que\ je\ fais .card i {
+  font-size: 3rem;
+}
+
+/* Titre des cartes */
+#Ce\ que\ je\ fais .card-title {
+  font-weight: bold;
+  color: #2c3e50;
+}
+#projects {
+  padding: 2rem 0;
+  background-color: #f8f9fa;
+}
+
+.projects-container {
+  gap: 1rem;
+}
+
+.project-card {
+  width: 200px;
+  text-align: center;
+}
+
+.project-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* --- PROJETS AVEC MODALE --- */
+.project-image:hover {
+  transform: scale(1.05);
+}
+
+.project-title {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Modale */
+.modal-body img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* Lien actif dans la navbar */
+.navbar ul li a.active {
+  color: #007bff; /* Couleur bleue pour le lien actif */
+  font-weight: bold;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-left: 15px; /* Décale le logo vers la droite */
+}
+
+.logo-image {
+  height: 50px; /* Ajustez la taille selon vos besoins */
+  width: auto;
+  display: block;
+  margin-top: 5px; /* Décale légèrement le logo vers le bas */
+}
+@media (max-width: 768px) {
+  .logo {
+    margin-left: 10px; /* Réduit l'espace pour les petits écrans */
+  }
+
+  .logo-image {
+    height: 40px; /* Réduit la taille du logo pour les écrans plus petits */
+  }
+}
+
+.navbar ul {
+  flex-grow: 1; /* Pour garder les liens bien espacés */
+  justify-content: center;
+}
+
+.menu-toggle {
+  margin-left: auto; /* Maintient la cohérence avec la nouvelle disposition */
+  color: white;
+}
+
+/* --- STYLE DU BOUTON DE MENU (HAMBURGER) --- */
+.menu-toggle {
+  display: flex;
+  align-items: center; /* Centre verticalement */
+  justify-content: center; /* Centre horizontalement */
+  height: 50px; /* Ajustez selon la taille de votre navbar */
+  width: 50px; /* Assurez-vous qu'il soit carré */
+  margin: auto 15px; /* Espace pour le séparer des autres éléments */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out; /* Ajoute une animation fluide */
+}
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  margin: auto 15px;
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Transition plus fluide */
+  position: relative;
+}
+
+/* --- STYLE DES LIGNES DU MENU HAMBURGER --- */
+.menu-toggle span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #ffffff; /* Couleur des lignes */
+  border-radius: 2px;
+  position: absolute;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Tentative de positionnement des lignes du menu*/
+.menu-toggle span {
+  top: 10px;
+  left: 0;
+}
+
+.menu-toggle span {
+  top: 20px;
+  left: 0;
+}
+
+.menu-toggle span {
+  top: 30px;
+  left: 0;
+}
+
+/* --- ANIMATION DU MENU OUVERT --- */
+.menu-toggle.open {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.menu-toggle.open {
+  opacity: 0;
+}
+
+.menu-toggle.open {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Vidéo en plein écran */
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Contenu par-dessus la vidéo */
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/** Source sur internet : letecode.com qui permet d'intégrer la vidéo en fond sur l'ensemble de la page **/
+
+body {
+  background-color: white;
+  color: black;
+
+  padding: 100px;
+}
+
+/* Intégration d'un fond transparent pour les compétences */
+#Mes\ Compétences {
+  background: rgba(193, 189, 189, 0.6); /* Fond blanc semi-transparent */
+  border-radius: 10px; /* Coins arrondis */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Effet d'ombre pour un meilleur contraste */
+}
+
+/* Animation des barres de compétences */
+.progress-bar {
+  transition: width 1.5s ease-in-out; /* Animation fluide */
+}
+
+/* Animation spécifique pour le texte du paragraphe */
+@keyframes particleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8); /* Début avec un léger décalage et une réduction d'échelle */
+    filter: blur(10px); /* Effet de flou initial pour un effet de particules */
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-10px) scale(1.05); /* Légère remontée et augmentation d'échelle pour plus de dynamisme */
+    filter: blur(5px); /* Réduction progressive du flou */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* Stabilisation à l'état final */
+    filter: blur(0); /* Suppression totale du flou */
+  }
+}
+
+/* Classe fade-in classique pour le titre */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+/* Animation pour le paragraphe avec effet de particules */
+.fade-in.delay-1 {
+  animation: particleFadeIn 1.5s ease-out forwards;
+}
+
+/* Animation pour le titre avec apparence plus simple */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animation subtile pour l'apparition du bouton */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-appear {
+  animation: fadeSlideIn 1s ease-out forwards;
+  animation-delay: 1s; /* Légère attente avant l'affichage du bouton */
+  opacity: 0; /* Assure que le bouton n'est pas visible avant l'animation */
+}
+
+/* Animation pour l'apparition du logo avec un effet de zoom et rotation légère */
+@keyframes logoAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg); /* Réduction initiale et légère rotation */
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1) rotate(5deg); /* Effet dynamique de zoom et légère rotation */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg); /* Stabilisation à l'état normal */
+  }
+}
+
+.logo-appear {
+  animation: logoAppear 1.5s ease-out forwards;
+  animation-delay: 1.2s; /* Légère attente avant l'apparition du logo */
+  opacity: 0; /* Assure que le logo n'est pas visible avant l'animation */
+}
